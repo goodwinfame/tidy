@@ -12,7 +12,7 @@ if (typeof require !== 'undefined') {
 
 
 module.exports = withTypescript(withCss(withLess({
-    webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
+    webpack: (config) => {
         //exclude node_modules from css and less loaders
         config.module.rules.forEach(rule => {
 
