@@ -36,7 +36,7 @@ with-redux-observable [@zeit/with-redux-observable](https://github.com/zeit/next
 
 
 ## Why name tidy?
-Currently I placed epics and reducers together, and I call it model, just like [@dvajs/dva](https://github.com/dvajs/dva).
+Currently I placed epics and reducers together, and I call it model, just like [@dvajs/dva](https://github.com/dvajs/dva).
 I think this is great, gathering makes the business more clear and the project tidy.
 This is just the begining, it will be continually updated.
 
@@ -54,17 +54,17 @@ This is just the begining, it will be continually updated.
 
 
 在使用dva的过程中，觉得model的设计太突出了，把react项目中零碎的业务逻辑都整合起来，业务变得清晰易维护。
-所以，我想试着用dva的形式来组织redux-observable代码。
+所以，我想试着用dva的形式来组织redux-observable代码。
 
 
 另外，我也会试着在model中加入一些其他实用方法。
-再使用dva的过程中，我感觉从model中取值往往很繁琐，尤其是在state结构复杂或关联之后。
-vuex的getter不错，将一些状态的提取固化，这样就不用担心state复杂后，使用繁琐了。
+再使用dva的过程中，我感觉从model中取值往往很繁琐，尤其是在state结构复杂或关联之后。
+vuex的getter不错，将一些状态的提取固化，这样就不用担心state复杂后，使用繁琐了。
 
 
-同时，对应不同的业务场景，model的state设计会有区别，
+同时，对应不同的业务场景，model的state设计会有区别，
 但有一些不错的设计模式，我觉得可以集成到model中，避免model中有过多的胶水代码。
 
 
-model的按需加载。
-按照next.js的规则。model应跟随路由加载。
+model的按需加载。
+按照next.js的规则。model应跟随路由加载。
