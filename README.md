@@ -54,7 +54,7 @@ This is just the begining, it will be continually updated.
 
 
 在使用dva的过程中，觉得model的设计太突出了，把react项目中零碎的业务逻辑都整合起来，业务变得清晰易维护。
-所以，我想试着用dva的形式来组织redux-observable代码。
+所以，我想试着用dva的形式来组织redux-observable代码。
 
 
 另外，我也会试着在model中加入一些其他实用方法。
