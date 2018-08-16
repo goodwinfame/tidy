@@ -1,0 +1,22 @@
+{
+  "presets": [
+    "next/babel",
+    "@zeit/next-typescript/babel"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    [
+      "wildcard",
+      {
+        "exts": ["ts"]
+      }
+    ],
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": true
+      }
+    ]
+  ]
+}
