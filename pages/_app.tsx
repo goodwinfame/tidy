@@ -1,14 +1,14 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import App, { Container } from 'next/app'
-import withRedux from 'next-redux-wrapper'
-import makeStore from '../store'
+import tidy from 'tidy'
 
 interface Props {
     store: object
 } 
 
-class MyApp extends App<Props> {
+@tidy()
+export default class extends App<Props> {
   static async getInitialProps ({ Component, ctx }) {
     const pageProps = Component.getInitialProps
       ? await Component.getInitialProps(ctx)
@@ -29,4 +29,3 @@ class MyApp extends App<Props> {
   }
 }
 
-export default withRedux(makeStore)(MyApp)

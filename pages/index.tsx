@@ -1,10 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import { of, Subject } from 'rxjs'
-import { StateObservable } from 'redux-observable'
-import { connect } from 'tidy'
-import CharacterInfo from '../components/CharacterInfo/index'
-import rootEpic from '../store/epics'
+import { connect, dispatch } from 'tidy'
+import CharacterInfo from 'components/CharacterInfo/index'
 import {Button} from 'antd';
 
 
@@ -16,15 +13,11 @@ interface State {}
 
 class Counter extends React.Component<Props, State> {
   static async getInitialProps ({ store, isServer }) {
-    const state$ = new StateObservable(new Subject(), store.getState())
-    const resultAction = await rootEpic(
-      of({
-        type: `user/FETCH_CHARACTER`,
-        payload: { isServer }
-      }),
-      state$
-    ).toPromise() // we need to convert Observable to Promise
-    store.dispatch(resultAction)
+    
+    await dispatch.call({store}, {
+      type: `user/FETCH_CHARACTER`,
+      payload: { isServer }
+    })
 
     return { isServer }
   }

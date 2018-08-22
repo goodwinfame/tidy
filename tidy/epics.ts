@@ -1,5 +1,5 @@
-import { combineEpics, ofType} from 'redux-observable'
-import { interval, of, concat } from 'rxjs'
+import { combineEpics, ofType, StateObservable} from 'redux-observable'
+import { interval, of, concat, Subject, Observable } from 'rxjs'
 import { takeUntil, mergeMap, switchMap, catchError, map } from 'rxjs/operators'
 import * as models from '../models';
 
@@ -35,8 +35,21 @@ const epics = Object.values(models).reduce((total: Array<Function>, item: model)
   )
 }, []);
 
-
-
-export default combineEpics(
+const rootEpic = combineEpics(
   ...epics
 )
+
+/**
+ * 处理epic
+ * 返回reducer action
+ * @param action$ 
+ * @param store 
+ */
+export async function emit(action$: Observable<any>, store){
+  const state$ = new StateObservable(new Subject(), store.getState());
+
+  return await rootEpic(action$, state$).toPromise();
+}
+
+
+export default rootEpic
