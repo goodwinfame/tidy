@@ -11,7 +11,11 @@ interface Props {
 } 
 interface State {}
 
-class Counter extends React.Component<Props, State> {
+
+connect(({user})=>({
+  isFetching: user.isFetching
+}))
+export default class extends React.Component<Props, State> {
   static async getInitialProps ({ store, isServer }) {
     
     await dispatch.call({store}, {
@@ -65,7 +69,3 @@ class Counter extends React.Component<Props, State> {
     )
   }
 }
-
-export default connect(({user})=>({
-  isFetching: user.isFetching
-}))(Counter)
