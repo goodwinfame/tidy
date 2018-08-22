@@ -12,7 +12,7 @@ interface Props {
 interface State {}
 
 
-connect(({user})=>({
+@connect(({user})=>({
   isFetching: user.isFetching
 }))
 export default class extends React.Component<Props, State> {
