@@ -106,8 +106,8 @@ export default {
         
     },
     getter: {
-        name(globalState){
-            return globalState.user.character.name
+        brief(globalState){
+            return `${globalState.user.character.name}'s eye is ${globalState.user.character.eye_color}`
         }
     }
 }
