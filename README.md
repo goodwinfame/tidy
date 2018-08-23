@@ -35,6 +35,15 @@ and
 with-redux-observable [@zeit/with-redux-observable](https://github.com/zeit/next.js/tree/canary/examples/with-redux-observable)
 
 
+## 更新日志
+1.0.0
+框架集成
+
+1.0.1
+model中加入getter
+getter接受全局state并返回结果
+结果放入model state
+
 ## Why name tidy?
 Currently I placed epics and reducers together, and I call it model, just like [@dvajs/dva](https://github.com/dvajs/dva).
 I think this is great, gathering makes the business more clear and the project tidy.

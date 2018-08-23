@@ -106,6 +106,8 @@ export default {
         
     },
     getter: {
-
+        name(globalState){
+            return globalState.user.character.name
+        }
     }
 }
