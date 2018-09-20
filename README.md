@@ -45,14 +45,13 @@ getter接受全局state并返回结果
 结果放入model state
 
 ## Why name tidy?
-Currently I placed epics and reducers together, and I call it model, just like [@dvajs/dva](https://github.com/dvajs/dva).
-I think this is great, gathering makes the business more clear and the project tidy.
+Just like [@dvajs/dva](https://github.com/dvajs/dva), models handle the business, I placed epics and reducers together in model, this form of model structure makes the business more clear and the project tidy.
 This is just the begining, it will be continually updated.
 
 
 😅😅😅
 
-用英语写得好累啊，以后再改吧。
+英文说明以后补充。
 先用中文说明下，
 这个项目解决了next官方示例没有解决或没有提到的一些问题，例如：antd样式动态加载（ts环境），cssModules影响antd样式等问题。
 
